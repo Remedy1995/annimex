@@ -582,6 +582,10 @@
 }
 
 @media only screen and (max-width: 767px) {
+    .image-box {
+        background: #f3f3f3;
+        height: 250px;
+    }
     body { font-size: 13px; line-height: 1.5; }
     h1, .h1 { font-size:22px; }
     h2, .h2 { font-size:18px; }

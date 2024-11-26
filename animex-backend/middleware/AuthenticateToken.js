@@ -12,7 +12,7 @@ exports.AuthenticateToken = (req, res, next) => {
 
     jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
         if (err) {
-            return res.status(401).json('Unauthenticated Failed to validate token');
+            return res.status(401).json({status : 401 ,message : 'Unauthenticated Failed to validate token'});
         }
         req.userId = decoded.userId;
 

@@ -10,6 +10,16 @@ router.use(bodyparser.urlencoded({ extended: false }));
 router.use(bodyparser.json());
 
 
-router.post('/create-product', authenticate.AuthenticateToken, product.createProducts);
+router.post('/product', product.createProducts);
+router.get('/product', product.allProducts);
+router.get('/product/:id', product.getSingleProduct);
+router.delete('/product/:id', product.deleteProduct);
+router.post('/related-product/:id', product.getRelatedProducts);
+router.post('/suggested-product/:id', product.getSuggestedProducts);
+router.post('/suggested-multiple-product', product.getSuggestedMultipleProducts);
+router.get('/category-based-product', product.getProductBasedOnCategory);
+
+
+
 
 module.exports = router;
